@@ -1,0 +1,13 @@
+<template><Component4 /></template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Component4 from './Component4.vue';
+
+export default defineComponent({
+	name: 'Component3',
+	components: { Component4 },
+});
+</script>
+
+<style></style>
