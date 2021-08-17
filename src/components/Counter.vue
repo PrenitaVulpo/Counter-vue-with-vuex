@@ -1,6 +1,7 @@
 <template>
 	<h1>Vuex Counter</h1>
 	<h1 class="counter">0</h1>
+	<button>-</button><input type="number" name="" id="" /><button>+</button>
 </template>
 
 <script lang="ts">
@@ -15,5 +16,18 @@ export default defineComponent({
 <style>
 .counter {
 	font-size: 5rem;
+}
+button {
+	border-radius: 100%;
+	border: none;
+	width: 2rem;
+	height: 2rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+input {
+	padding: 0.4rem;
+	margin: 0 0.5rem;
+	text-align: center;
 }
 </style>
