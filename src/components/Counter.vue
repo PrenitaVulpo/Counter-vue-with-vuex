@@ -5,6 +5,8 @@
 </template>
 
 <script lang="ts">
+//functions that returns the desired states
+import { mapState } from 'vuex';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -15,6 +17,11 @@ export default defineComponent({
 			value: 1,
 			counter: 0,
 		};
+	},
+	computed: {
+		//to get the states, you simply have to put the states on an array
+		//and then they will be avaliabe for direct usage
+		...mapState(['counter', 'counterX']),
 	},
 });
 </script>
