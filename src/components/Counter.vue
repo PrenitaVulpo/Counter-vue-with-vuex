@@ -22,7 +22,6 @@ export default defineComponent({
 	data() {
 		return {
 			value: 1,
-			counter: 0,
 		};
 	},
 	computed: {
