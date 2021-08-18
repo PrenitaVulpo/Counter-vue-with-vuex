@@ -1,7 +1,7 @@
 <template>
 	<h1>Vuex Counter</h1>
-	<h1 class="counter">0</h1>
-	<button>-</button><input type="number" name="" id="" /><button>+</button>
+	<h1 class="counter">{{ $store.state.counter }}</h1>
+	<button>-</button><input type="number" v-model="value" /><button>+</button>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,12 @@ import { defineComponent } from 'vue';
 export default defineComponent({
 	name: 'Counter',
 	components: {},
+	data() {
+		return {
+			value: 1,
+			counter: 0,
+		};
+	},
 });
 </script>
 
