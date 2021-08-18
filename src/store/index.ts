@@ -5,7 +5,14 @@ export default createStore({
 		counter: 0,
 		counterX: 0,
 	},
-	mutations: {},
+	mutations: {
+		addValueToCounter(state, value: number) {
+			state.counter += value;
+		},
+		removeValueFromCounter(state, value: number) {
+			state.counter -= value;
+		},
+	},
 	actions: {},
 	modules: {},
 });
