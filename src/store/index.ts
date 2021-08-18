@@ -6,6 +6,7 @@ export default createStore({
 		isLoading: false,
 		counter: 0,
 		counterX: 0,
+		history: [] as number[],
 	},
 	mutations: {
 		toggleLoading(state) {
@@ -14,9 +15,11 @@ export default createStore({
 		//first argument is the state, the other is the payload
 		addValueToCounter(state, value: number) {
 			state.counter += value;
+			state.history.unshift(value);
 		},
 		removeValueFromCounter(state, value: number) {
 			state.counter -= value;
+			state.history.unshift(value);
 		},
 	},
 	//actions are use to perform assincronous calls to modify the state
@@ -31,6 +34,17 @@ export default createStore({
 			).data;
 			context.commit('addValueToCounter', randomNumber);
 			context.commit('toggleLoading');
+		},
+	},
+	getters: {
+		activeIndexes: (state) => (value: number) => {
+			const indexes: number[] = [];
+			state.history.forEach((number, index) => {
+				if (number === value) {
+					indexes.push(index);
+				}
+			});
+			return indexes;
 		},
 	},
 	modules: {},
